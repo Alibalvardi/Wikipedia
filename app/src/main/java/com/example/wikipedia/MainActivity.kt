@@ -1,10 +1,13 @@
 package com.example.wikipedia
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.wikipedia.databinding.ActivityMainBinding
 import com.example.wikipedia.fragments.FragmentExplore
 import com.example.wikipedia.fragments.FragmentProfile
@@ -37,21 +40,99 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.menu_writer -> {
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+                    val dialog = SweetAlertDialog(this , SweetAlertDialog.WARNING_TYPE)
+                    dialog.titleText = "Alert!"
+                    dialog.confirmText = "confirm"
+                    dialog.cancelText = "cancel"
+                    dialog.contentText = "open wikimedia"
+                    dialog.setOnCancelListener{
+                        dialog.dismiss()
+                    }
+                    dialog.setConfirmClickListener {
+                        dialog.dismiss()
+                    }
+                    dialog.show()
                 }
                 R.id.menu_photographer -> {
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+                    val dialog = SweetAlertDialog(this , SweetAlertDialog.SUCCESS_TYPE)
+                    dialog.titleText = "Alert!"
+                    dialog.confirmText = "confirm"
+                    dialog.cancelText = "cancel"
+                    dialog.contentText = "open wikimedia"
+                    dialog.setOnCancelListener{
+                        dialog.dismiss()
+                    }
+                    dialog.setConfirmClickListener {
+                        dialog.dismiss()
+                    }
+                    dialog.show()
                 }
                 R.id.menu_videoMaker -> {
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+                    val dialog = SweetAlertDialog(this , SweetAlertDialog.PROGRESS_TYPE)
+                    dialog.titleText = "Alert!"
+                    dialog.confirmText = "confirm"
+                    dialog.cancelText = "cancel"
+                    dialog.contentText = "open wikimedia"
+                    dialog.setOnCancelListener{
+                        dialog.dismiss()
+                    }
+                    dialog.setConfirmClickListener {
+                        dialog.dismiss()
+                    }
+                    dialog.show()
                 }
                 R.id.menu_translator -> {
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+                    val dialog = SweetAlertDialog(this , SweetAlertDialog.ERROR_TYPE)
+                    dialog.titleText = "Alert!"
+                    dialog.confirmText = "confirm"
+                    dialog.cancelText = "cancel"
+                    dialog.contentText = "open wikimedia"
+                    dialog.setOnCancelListener{
+                        dialog.dismiss()
+                    }
+                    dialog.setConfirmClickListener {
+                        dialog.dismiss()
+                    }
+                    dialog.show()
+
                 }
                 R.id.menu_visitWikimedia -> {
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+                    val dialog = SweetAlertDialog(this , SweetAlertDialog.NORMAL_TYPE)
+                    dialog.titleText = "Alert!"
+                    dialog.confirmText = "confirm"
+                    dialog.cancelText = "cancel"
+                    dialog.contentText = "open wikipedia"
+                    dialog.setOnCancelListener{
+                        dialog.dismiss()
+                    }
+                    dialog.setConfirmClickListener {
+                        dialog.dismiss()
+                        val intent = Intent(Intent.ACTION_VIEW , Uri.parse("https://en.wikipedia.org/wiki/Main_Page"))
+                        startActivity(intent)
+                    }
+                    dialog.show()
+
                 }
                 R.id.menu_visitWikipedia -> {
                     binding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+                    val dialog = SweetAlertDialog(this , SweetAlertDialog.NORMAL_TYPE)
+                    dialog.titleText = "Alert!"
+                    dialog.confirmText = "confirm"
+                    dialog.cancelText = "cancel"
+                    dialog.contentText = "open wikimedia"
+                    dialog.setOnCancelListener{
+                        dialog.dismiss()
+                    }
+                    dialog.setConfirmClickListener {
+                        dialog.dismiss()
+                        val intent = Intent(Intent.ACTION_VIEW , Uri.parse("https://www.wikimedia.org/"))
+                        startActivity(intent)
+                    }
+                    dialog.show()
                 }
 
             }
