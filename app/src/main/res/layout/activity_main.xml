@@ -12,7 +12,6 @@
         tools:context=".MainActivity">
 
 
-
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar_main"
             android:layout_width="match_parent"
@@ -22,30 +21,27 @@
                 android:id="@+id/toolBar_main"
                 android:layout_width="wrap_content"
                 android:layout_height="56dp"
-                android:theme="@style/myToolbar" />
+                android:theme="@style/myToolbar"
+                app:layout_scrollFlags="scroll" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
             android:id="@+id/frame_main_container"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="56dp"/>
+            android:layout_marginBottom="56dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
-            app:menu="@menu/menu_bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
-
-
+            android:layout_gravity="bottom"
+            app:menu="@menu/menu_bottom_navigation" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 
 
     <com.google.android.material.navigation.NavigationView
